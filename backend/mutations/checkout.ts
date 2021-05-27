@@ -92,7 +92,7 @@ async function checkout(
     },
   });
   // 6. Clean up any old cart item
-  const cartItemIds = cartItems.map((cartItem) => cartItem.id);
+  const cartItemIds = user.cart.map((cartItem) => cartItem.id);
   console.log('cartItemIds...');
   console.log(cartItemIds);
   await context.lists.CartItem.deleteMany({ ids: cartItemIds });
